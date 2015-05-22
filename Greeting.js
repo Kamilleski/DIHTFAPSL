@@ -26,7 +26,7 @@ var TGIFMessage;
 if (dayOfWeek === 0 || dayOfWeek === 6) {
   TGIFMessage = "What the good-God-damn are you doing \nOUT\nOF\nBED\non the weekend?!";
 }
-else if (dayOfWeek >= 1 || dayOfWeek <= 3) {
+else if (dayOfWeek > 1 || dayOfWeek <= 3) {
   TGIFMessage = "Only " + (5 - dayOfWeek) + " more days until Friday!\nYour hair looks great today, by the way.";
 }
 else if (dayOfWeek === 4) {
