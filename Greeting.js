@@ -1,4 +1,3 @@
-//getting time of day for initial greeting
 
 var d = new Date();
 var hour = d.getHours();
@@ -35,6 +34,13 @@ else if (dayOfWeek === 4) {
 else {
   TGIFMessage = "TGIF, BITCHES.\nYou deserve a drank.";
 }
+
+var totalGreeting = function(greet, message){
+  return greet + "\n" + message;
+};
+totalGreeting(heyHoney(), TGIFMessage);
 //console.logging until I figure out fucking HTML goddamnit shit fuck
-console.log(heyHoney());
-console.log(TGIFMessage);
+//console.log(heyHoney());
+//console.log(TGIFMessage);
+
+//Practice doing all of this with a higher-order function
