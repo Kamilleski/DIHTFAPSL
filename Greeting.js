@@ -26,7 +26,7 @@ if (dayOfWeek === 0 || dayOfWeek === 6) {
   TGIFMessage = "What the good-God-damn are you doing \nOUT\nOF\nBED\non the weekend?!";
 }
 else if (dayOfWeek > 1 || dayOfWeek <= 3) {
-  TGIFMessage = "Only " + (5 - dayOfWeek) + " more days until Friday!\nYour hair looks great today, by the way.";
+  TGIFMessage = "Only " + (5 - dayOfWeek) + " more days until Friday...\nYour hair looks great today, by the way!";
 }
 else if (dayOfWeek === 4) {
   TGIFMessage = "Tomorrow's Friday! You're almost there...";
@@ -36,7 +36,7 @@ else {
 }
 
 var totalGreeting = function(greet, message){
-  return greet + "\n" + message;
+  document.write(greet + "  " + message);
 };
 totalGreeting(heyHoney(), TGIFMessage);
 //console.logging until I figure out fucking HTML goddamnit shit fuck
