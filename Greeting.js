@@ -1,4 +1,4 @@
-
+//finding local date and time
 var d = new Date();
 var hour = d.getHours();
 var watchTime = d.toLocaleTimeString();
@@ -7,15 +7,15 @@ var watchTime = d.toLocaleTimeString();
 var greeting;
 var heyHoney = function() {
   if (hour < 12 && hour >= 0) {
-    greeting = "Good morning" ;
+    greeting = 'Good morning' ;
   }
   else if (hour <= 18) {
-    greeting = "Good afternoon";
+    greeting = 'Good afternoon';
   }
   else {
-    greeting = "Good evening";
+    greeting = 'Good evening';
   }
-return greeting + ", honey! The time is " + watchTime + ".";
+return greeting + ' , honey! The time is ' + watchTime + '.';
 };
 
 
@@ -23,24 +23,20 @@ return greeting + ", honey! The time is " + watchTime + ".";
 var dayOfWeek = d.getDay();
 var TGIFMessage;
 if (dayOfWeek === 0 || dayOfWeek === 6) {
-  TGIFMessage = "What the good-God-damn are you doing \nOUT\nOF\nBED\non the weekend?!";
+  TGIFMessage = 'What the good-God-damn are you doing OUT OF BED on the weekend?!';
 }
 else if (dayOfWeek > 1 || dayOfWeek <= 3) {
-  TGIFMessage = "Only " + (5 - dayOfWeek) + " more days until Friday...\nYour hair looks great today, by the way!";
+  TGIFMessage = 'Only ' + (5 - dayOfWeek) + ' more days until Friday... Your hair looks great today, by the way!';
 }
 else if (dayOfWeek === 4) {
   TGIFMessage = "Tomorrow's Friday! You're almost there...";
 }
 else {
-  TGIFMessage = "TGIF, BITCHES.\nYou deserve a drank.";
+  TGIFMessage = 'TGIF, BITCHES. You deserve a drank.';
 }
 
-var totalGreeting = function(greet, message){
-  document.write(greet + "  " + message);
-};
+//writing output to html page
+function totalGreeting(salutation, body) {
+  document.write(salutation + "  " + body);
+}
 totalGreeting(heyHoney(), TGIFMessage);
-//console.logging until I figure out fucking HTML goddamnit shit fuck
-//console.log(heyHoney());
-//console.log(TGIFMessage);
-
-//Practice doing all of this with a higher-order function
