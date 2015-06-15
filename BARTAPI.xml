@@ -1,25 +1,21 @@
 <root>
 <uri>
 <![CDATA[
-http://api.bart.gov/api/etd.aspx?cmd=etd&orig=embr&dir=n
+http://api.bart.gov/api/etd.aspx?cmd=etd&orig=embr&key=MW9S-E7SL-26DU-VV8V&dir=n
 ]]>
 </uri>
-<date>06/14/2015</date>
-<time>08:22:48 AM PDT</time>
-<station>
-<name>Embarcadero</name>
-<abbr>EMBR</abbr>
-<etd>
-<destination>Richmond</destination>
-<abbreviation>RICH</abbreviation>
-<estimate>
-<minutes>5</minutes>
-<platform>2</platform>
-<direction>North</direction>
-<length>8</length>
-<color>BLUE</color>
-<hexcolor>#0099cc</hexcolor>
-<bikeflag>1</bikeflag>
+  <date>06/14/2015</date>
+  <time>08:22:48 AM PDT</time>
+  <station>
+    <name>Embarcadero</name>
+    <abbr>EMBR</abbr>
+  <etd>
+    <destination>Downtown Berkeley</destination>
+    <abbreviation>DBRK</abbreviation>
+  <estimate>
+    <minutes>5</minutes>
+  <direction>North</direction>
+
 </estimate>
 </etd>
 </station>
