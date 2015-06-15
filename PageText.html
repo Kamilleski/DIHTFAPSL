@@ -4,27 +4,34 @@
   <head>
     <link type="text/css" rel="stylesheet" href="stylesheet.css">
     <title>Do I Have Time for a Pumpkin Spice Latte | Basic Bitch Basics</title>
+    
   </head>
   <body style="text-align: center">
     <h1>Do I Have Time for a <a href="http://thecouponproject.com/wp-content/uploads/2012/09/PeetCoffee.jpg">Pumpkin Spice Latte</a>?</h1>
     <h2><script src="Greeting.js"></script></h2>
     <h2><script src="TimeCalculator.js"></script></h2>
     <hr /><br><br>
+    <script type="text/javascript">
+      function calCalculator(name) {
+        if (sex === 'F' || sex === 'f') {
+          recCalories = Math.floor(1.375 * ((447.593 + (9.247 * weight) + (3.098 * height)) - (4.330 * age)));
+          percentage = Math.floor(375 / recCalories);
+          alert('You just ate ' + percentage + '% of your daily recommended ' + recCalories + ' calories!');
+          return true;
+        }
+        else if (sex === 'M' || sex === 'm') {
+          recCalories = Math.floor(1.375 * ((88.362 + (13.397 * weight) + (4.799 * height)) - (5.677 * age)));
+          percentage = Math.floor(100 * (375 / recCalories));
+          alert('You just ate ' + percentage + '% of your daily recommended ' + recCalories + ' calories!');
+          return true;
+        }
+      }
+    </script>
     
-    <fieldset>
-      <form name="cCounter">
-        <legend>Calorie Counter</legend>
-        <label>Age (in years): <input type="text" name ="age" /></label> <br><br>
-        <label>Height (<a href="google.com">in cm</a>): <input type="text" name="height" /></label> <br><br>
-        <label>Weight (<a href="google.com">in kg</a>): <input type="text" name="weight" /></label> <br><br>
-        <label>Sex Identity:</label> 
-          <input id="female" type="radio" name="Sex Identity" value="f"> <label for="female">"Female"</label>
-          <input id="male" type="radio" name="Sex Identity" value="m"> <label for="male">"Male"</label>
-        <br><br>
-        <input type="submit" value="Submit Data" />
-      </form>
-    </fieldset>
+    <button onclick="alert("Hello!")">PSL Calories</button>
+    
     <br><br><hr />
+    
     
     <h3>Relevant Links for your consideration:</h3>
       <p><a href="http://www.autostraddle.com/50-pumpkin-recipes-that-will-put-your-latte-to-shame-257485/">Pumpkin Spice and Everything Nice</a></p>
