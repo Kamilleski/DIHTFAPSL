@@ -11,97 +11,58 @@
     <h2><script src="Greeting.js"></script></h2>
     <h2><script src="TimeCalculator.js"></script></h2>
     <hr /><br><br>
-    <script type='text/javascript'>
-      function calCounter(form){
-        var age = form.elements['age'].value;
-        age = parseInt(age, 10);
-        var height = form.elements['height'].value;
-        height = parseInt(height, 10);
-        var weight = form.elements['weight'].value;
-        weight = parseInt(weight, 10);
-        function getRadioCheckedValue("SexIdentity") {
-          var sex = document.forms[0].elements["SexIdentity"];
-          for (var i = 0; i < sex.length; i++) {
-            if(sex[i].checked) {
-              return sex[i].value;
-            }
-          }
- 
-          return '';
-        }
-        var recCalories;
-        var percentage;
-        
-        if (sex === "f") {
-          recCalories = Math.floor((655.0955 + (9.5634 * weight) + (1.8496 * height)) - (4.6756 * age));
-          percentage = (375 / recCalories);
-          return alert("You just ate " + percentage + "% of your daily recommended " + recCalories + "!")
-        }
-        else if (sex === "m") {
-          recCalories = Math.floor((66.473 + (13.7516 * weight) + (5.0033 * height)) - (6.7550 * age));
-          percentage = (375 / recCalories);
-          return alert("You just ate " + percentage + "% of your daily recommended " + recCalories + "!")
-        }
-        document.cCounter.submit();
-      }
-    </script>
     
     <fieldset>
-      <form name="cCounter">
-        <legend>Pumpkin Spice Latte Calorie Counter</legend>
-        <label>Age (in years): <input type="text" name ="age" /></label> <br><br>
-        <label>Height (<a href="google.com">in cm</a>): <input type="text" name="height" /></label> <br><br>
-        <label>Weight (<a href="google.com">in kg</a>): <input type="text" name="weight" /></label> <br><br>
-        <label>Sex Identity:</label> 
-          <input id="female" type="radio" name="SexIdentity" value="f"> <label for="female">"Female"</label>
-          <input id="male" type="radio" name="SexIdentity" value="m"> <label for="male">"Male"</label>
-        <br><br>
-        <input type="submit" value="Submit Data" />
-      </form>
+      Calculate how many calories you're about to burn!
+      <input type="text" placeholder="Age" class="calCalculator" id="age"/> <br>
+      <input type="text" placeholder="Height (in cm)" class="calCalculator" id="height"/> <br>
+      <input type="text" placeholder="Weight (in kg)" class="calCalculator" id="weight"/> <br>
+      <input type="text" placeholder="Sex (M or F)" class="calCalculator" id="sex" onkeydown="calCalculator(this)"/> <br>
+      
     </fieldset>
     
     <br>
-   
-    <span id="output"></span>
     
-    <script type="text/javascript">
-    
-      //get basic data from user
-
-
-      var age = prompt('What is your age in years?');
-      var height = prompt('What is your height in centimeters?');
-      var weight = prompt('What is your weight in kilograms?');
-      var sex = prompt("Enter 'F' or 'M' depending on which sex you identify with.");
-
+    <script type='text/javascript'>
+      var age = document.getElementById("age").value
+      var height = document.getElementById("height").value
+      var weight = document.getElementById("weight").value
+      var sex = document.getElementById("sex").value
+      
       //turn inputs into usable data
       age = parseInt(age, 10);
       height = parseInt(height, 10);
       weight = parseInt(weight, 10);
-
+      
       //declare values for following equation
       var recCalories;
       var percentage;
       var calsInPSL = 375; //there are 375 calories in a large whole milk Peet's Pumpkin Spice Latte
-
-      //calculates how many calories you just threw away, not including whip, using the Mifflin - St Jeor equation  
-      function calCalculator() {
+      
+      function calCalculator(){
+        
         if (sex === 'F' || sex === 'f') {
           recCalories = Math.floor(1.375 * ((447.593 + (9.247 * weight) + (3.098 * height)) - (4.330 * age)));
-          
         }
+        
         else if (sex === 'M' || sex === 'm') {
           recCalories = Math.floor(1.375 * ((88.362 + (13.397 * weight) + (4.799 * height)) - (5.677 * age)));
         }
         
         percentage = Math.floor(100 * (calsInPSL / recCalories));
         document.getElementById("output").innerHTML= 'You just ate ' + percentage + '% of your daily recommended ' + recCalories + ' calories!'
-
-        //else if (age.typeOf !== number
+        
+        output = function() {
+          if (event.keyCode == 13) {
+          alert('You just ate ' + percentage + '% of your daily recommended ' + recCalories + ' calories!');
+          }
+        }
       }
-      calCalculator();
       
-    </script>
+      
+      </script>
+   
+    <span id="output"></span>
     
     <br><br><hr />
     
