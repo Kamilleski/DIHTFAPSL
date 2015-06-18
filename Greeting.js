@@ -15,7 +15,7 @@ var heyHoney = function() {
   else {
     greeting = 'Good evening';
   }
-return greeting + ' , honey! The time is ' + watchTime + '.';
+return greeting + ', honey! The time is ' + watchTime + '.';
 };
 
 
@@ -25,7 +25,7 @@ var TGIFMessage;
 if (dayOfWeek === 0 || dayOfWeek === 6) {
   TGIFMessage = 'What the good-God-damn are you doing OUT OF BED on the weekend?!';
 }
-else if (dayOfWeek > 1 || dayOfWeek <= 3) {
+else if (dayOfWeek > 1 && dayOfWeek <= 3) {
   TGIFMessage = 'Only ' + (5 - dayOfWeek) + ' more days until Friday... Your hair looks great today, by the way!';
 }
 else if (dayOfWeek === 4) {
