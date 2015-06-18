@@ -59,7 +59,13 @@
         <input type="submit" value="Submit Data" />
       </form>
     </fieldset>
+    
+    <br>
+   
+    <span id="output"></span>
+    
     <script type="text/javascript">
+    
       //get basic data from user
 
 
@@ -76,23 +82,26 @@
       //declare values for following equation
       var recCalories;
       var percentage;
+      var calsInPSL = 375; //there are 375 calories in a large whole milk Peet's Pumpkin Spice Latte
 
-      //calculates how many calories you just threw away, not including whip     
+      //calculates how many calories you just threw away, not including whip, using the ***HIGGS-BOSON EQUATION***  
       function calCalculator() {
         if (sex === 'F' || sex === 'f') {
           recCalories = Math.floor(1.375 * ((447.593 + (9.247 * weight) + (3.098 * height)) - (4.330 * age)));
-          percentage = Math.floor(100 * (375 / recCalories));
-          alert('You just ate ' + percentage + '% of your daily recommended ' + recCalories + ' calories!');
+          
         }
         else if (sex === 'M' || sex === 'm') {
           recCalories = Math.floor(1.375 * ((88.362 + (13.397 * weight) + (4.799 * height)) - (5.677 * age)));
-          percentage = Math.floor(100 * (375 / recCalories));
-          alert('You just ate ' + percentage + '% of your daily recommended ' + recCalories + ' calories!');
         }
+        
+        percentage = Math.floor(100 * (calsInPSL / recCalories));
+        document.getElementById("output").innerHTML= 'You just ate ' + percentage + '% of your daily recommended ' + recCalories + ' calories!'
+
+        //else if (age.typeOf !== number
       }
+      calCalculator();
+      
     </script>
-    
-    <button height="100px" font-size="20px" width="500px" onclick="calCalculator();">PSL Calories</button>
     
     <br><br><hr />
     
