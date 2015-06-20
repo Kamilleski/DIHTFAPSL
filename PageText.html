@@ -13,22 +13,22 @@
     <hr /><br><br>
     
     <fieldset>
-      Calculate how many calories you're about to waste!
-      <input type="text" placeholder="Age" class="calCalculator" id="age"/> <br>
-      <input type="text" placeholder="Height (in cm)" class="calCalculator" id="height"/> <br>
-      <input type="text" placeholder="Weight (in kg)" class="calCalculator" id="weight"/> <br>
+      <br>Calculate how many calories you're about to waste!</br>
+
+      <input type="text" placeholder="Age" class="calCalculator" id="age" onkeydown="calCalculator(this)"/> <br>
+      <input type="text" placeholder="Height (in cm)" class="calCalculator" id="height" onkeydown="calCalculator(this)"/> <br>
+      <input type="text" placeholder="Weight (in kg)" class="calCalculator" id="weight" onkeydown="calCalculator(this)"/> <br>
       <input type="text" placeholder="Sex (M or F)" class="calCalculator" id="sex" onkeydown="calCalculator(this)"/> <br>
       
-    </fieldset>
-    
       <br>
     
       <script src="CalorieCounter.js"></script>
+      
+      <span id="output"></span>
+      
+    </fieldset>
    
-    <span id="output"></span>
-    
     <br><br><hr />
-    
     
     <h3>Relevant Links for your consideration:</h3>
       <p><a href="http://www.autostraddle.com/50-pumpkin-recipes-that-will-put-your-latte-to-shame-257485/">Pumpkin Spice and Everything Nice</a></p>
