@@ -13,7 +13,7 @@
     <hr /><br><br>
     
     <fieldset>
-      Calculate how many calories you're about to burn!
+      Calculate how many calories you're about to waste!
       <input type="text" placeholder="Age" class="calCalculator" id="age"/> <br>
       <input type="text" placeholder="Height (in cm)" class="calCalculator" id="height"/> <br>
       <input type="text" placeholder="Weight (in kg)" class="calCalculator" id="weight"/> <br>
@@ -24,6 +24,8 @@
     <br>
     
     <script type='text/javascript'>
+      function calCalculator(){
+        
       var age = document.getElementById("age").value
       var height = document.getElementById("height").value
       var weight = document.getElementById("weight").value
@@ -38,8 +40,6 @@
       var recCalories;
       var percentage;
       var calsInPSL = 375; //there are 375 calories in a large whole milk Peet's Pumpkin Spice Latte
-      
-      function calCalculator(){
         
         if (sex === 'F' || sex === 'f') {
           recCalories = Math.floor(1.375 * ((447.593 + (9.247 * weight) + (3.098 * height)) - (4.330 * age)));
