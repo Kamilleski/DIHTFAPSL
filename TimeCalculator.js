@@ -40,7 +40,7 @@ xhr.onreadystatechange = function() {
     for(var i = 0; i <k.length; i++) {   //looping to use only the train lines that lead to Richmond
       var abbr = (k[i].getElementsByTagName("abbreviation")[0].childNodes[0].nodeValue);
       if (abbr === "PITT") {
-        mins = xmlDoc.getElementsByTagName("etd")[0].getElementsByTagName("estimate")[0].getElementsByTagName("minutes")[0].childNodes[0].nodeValue;
+        mins = k[i].getElementsByTagName("minutes")[0].childNodes[0].nodeValue;
         mins = parseInt(mins);
         /*departTimes.push(mins);
         departTimes.sort(function(a, b){
@@ -48,7 +48,7 @@ xhr.onreadystatechange = function() {
           });
         mins = departTimes[0]*/
         if (mins <= 2) { //if number of minutes is less than time it takes to even run between trains, move to next viable etd
-          mins = xmlDoc.getElementsByTagName("minutes")[1].childNodes[0].nodeValue;
+          mins = k[i].getElementsByTagName("minutes")[1].childNodes[0].nodeValue;
           mins = parseInt(mins); 
           document.getElementById("runTime").innerHTML= "You couldn't make the next train even if you ran, so take your time! " + drankList(coffeeDranks, mins) + " The next viable train is leaving in " + mins + " minutes.";
         }
