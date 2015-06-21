@@ -39,8 +39,7 @@ xhr.onreadystatechange = function() {
     var k = xmlDoc.getElementsByTagName("etd");   //creates an array of etd objects
     for(var i = 0; i <k.length; i++) {   //looping to use only the train lines that lead to Richmond
       var abbr = (k[i].getElementsByTagName("abbreviation")[0].childNodes[0].nodeValue);
-      while (abbr === "PITT" || abbr === "RICH") {
-        var departTimes = [];
+      if (abbr === "PITT") {
         mins = xmlDoc.getElementsByTagName("etd")[0].getElementsByTagName("estimate")[0].getElementsByTagName("minutes")[0].childNodes[0].nodeValue;
         mins = parseInt(mins);
         /*departTimes.push(mins);
