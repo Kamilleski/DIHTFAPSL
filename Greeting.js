@@ -18,7 +18,6 @@ var heyHoney = function() {
 return greeting + ', honey! The time is ' + watchTime + '.';
 };
 
-
 //setting a countdown to Friday to keep the spirits of the basic bitches up
 var dayOfWeek = d.getDay();
 var TGIFMessage;
