@@ -36,12 +36,18 @@ xhr.onreadystatechange = function() {
   var mins;
   xmlDoc=xhr.responseXML;
   if (xhr.readyState==4 && xhr.status==200){
-    var k = xmlDoc.getElementsByTagName("etd"); //creates an array of etd objects
-    for(var i = 0; i <k.length; i++) { //looping to use only the lines that lead to Richmond
+    var k = xmlDoc.getElementsByTagName("etd");   //creates an array of etd objects
+    for(var i = 0; i <k.length; i++) {   //looping to use only the train lines that lead to Richmond
       var abbr = (k[i].getElementsByTagName("abbreviation")[0].childNodes[0].nodeValue);
-      if (abbr === "PITT") {
-        mins = xmlDoc.getElementsByTagName("minutes")[0].childNodes[0].nodeValue;
+      while (abbr === "PITT" || abbr === "RICH") {
+        var departTimes = [];
+        mins = xmlDoc.getElementsByTagName("etd")[0].getElementsByTagName("estimate")[0].getElementsByTagName("minutes")[0].childNodes[0].nodeValue;
         mins = parseInt(mins);
+        /*departTimes.push(mins);
+        departTimes.sort(function(a, b){
+          return a-b;
+          });
+        mins = departTimes[0]*/
         if (mins <= 2) { //if number of minutes is less than time it takes to even run between trains, move to next viable etd
           mins = xmlDoc.getElementsByTagName("minutes")[1].childNodes[0].nodeValue;
           mins = parseInt(mins); 
