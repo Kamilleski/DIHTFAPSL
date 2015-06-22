@@ -15,7 +15,8 @@ function drankList(arr, mins) {
   }
   
   if (mins <= 3) {
-    return 'Nonono! You barely have time to make it, let alone get a drink! Run, girl!';
+    return 'Nonono! You barely have time to make it, let alone get a drink! ' +
+    'Run, girl!';
   }
   
   else if (mins >= 9) {
@@ -61,7 +62,7 @@ xhr.onreadystatechange = function() {
         /**if number of minutes is less than time it takes to even run between 
          * trains, move to next viable estimated time of departure
          */
-        if (mins <= 2) { 
+        if (mins <= 2 || isNaN(mins) === true) { 
           negativeMessage = " You couldn't make the next train even if you" + 
             " ran, so take your time!";
           mins = k[i].getElementsByTagName("minutes")[1].childNodes[0].nodeValue;
