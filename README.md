@@ -1,4 +1,4 @@
-This project is exist essentially to make part of my individual commute easier.
+This project exists essentially to make part of my individual commute easier.
 
 On the way to UC Berkeley several times a week for class I like getting a 
 coffee drink at the Peet's on the station platform level at Embarcadero station,
