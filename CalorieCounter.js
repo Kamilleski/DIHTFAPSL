@@ -13,7 +13,7 @@ function calCalculator(){
         height = parseInt(height, 10);
         weight = parseInt(weight, 10);
         
-        //declare values for following equation
+        //declare values for following "Harris-Benedict" equation
         var recCalories;
         var percentage;
         var calsInPSL = 375; //there are 375 calories in a large whole milk Peet's Pumpkin Spice Latte
@@ -27,6 +27,6 @@ function calCalculator(){
           }
           
           percentage = Math.floor(100 * (calsInPSL / recCalories));
-          document.getElementById("output").innerHTML= 'You just ate ' + percentage + '% of your daily recommended ' + recCalories + ' calories!';
+          document.getElementById("output").innerHTML= 'You are about to consume ' + percentage + '%  of your daily recommended ' + recCalories + ' calories!';
         } 
       }
