@@ -15,20 +15,21 @@ function drankList(arr, mins) {
   }
   
   if (mins <= 3) {
-    return 'Nonono! You barely have time to make it, let alone get a drink! ' +
-    'Run, girl!';
+    return 'Nonono! You barely have time to make it, let alone get a drink! ' + 
+      'Run, girl!';
   }
   
-  else if (mins >= 9) {
+  else if (mins >= 7) {
     return 'YES, ' + drankString();
   }
   
   else {
-    while ((arr.length) >= mins) {
+    while ((arr.length + 1) >= mins) {
       arr.pop();
     }
     
-    return "Sadly you don't have time for a PSL today, but " + drankString();
+    return "Sadly you don't have time for a pumpkin spice latte today, but " + 
+      drankString();
   }
 }
 
@@ -36,47 +37,56 @@ function drankList(arr, mins) {
 var xhr;
 xhr = new XMLHttpRequest();
 
+//defining function to be used later so it won't be defined inside a loop
+function sortNumber(a,b) {
+    return a - b;
+}
+
+
+var departTimes = [];
+
+//parses XML to find individual etd times and pushes them into an array
 xhr.onreadystatechange = function() {
   var mins;
   xmlDoc=xhr.responseXML;
   if (xhr.readyState==4 && xhr.status==200){
     //creates array of etd objects
-    var k = xmlDoc.getElementsByTagName("etd");   
+    var etd = xmlDoc.getElementsByTagName("etd");   
     //looping to use only the train lines that lead to Richmond
-    for (var i = 0; i <k.length; i++) {   
-      var abbr = (k[i].getElementsByTagName("abbreviation")[0].childNodes[0].
+    for (var i = 0; i <etd.length; i++) {   
+      var abbr = (etd[i].getElementsByTagName("abbreviation")[0].childNodes[0].
         nodeValue);
       if (abbr === "PITT") {
-        mins = k[i].getElementsByTagName("minutes")[0].childNodes[0].nodeValue;
+        mins = etd[i].getElementsByTagName("minutes")[0].childNodes[0].nodeValue;
         mins = parseInt(mins);
-        /** FIXME: Richmond line should be included by pushing its data into an
-         * array along with the other data and then sorting it.  Right now it's
-         * only using Pittsburg/BayPoint data.  Preliminary try below:
         departTimes.push(mins);
-        departTimes.sort(function(a, b){
-          return a-b;
-          });
-        mins = departTimes[0]
-        */
-        
+      }
+      else if (abbr === "RICH") {
+        mins = etd[i].getElementsByTagName("minutes")[0].childNodes[0].nodeValue;
+        mins = parseInt(mins);
+        departTimes.push(mins);
+      }
+
+      departTimes.sort(sortNumber);
+      mins = departTimes[0];
+      
         /**if number of minutes is less than time it takes to even run between 
          * trains, move to next viable estimated time of departure
          */
-        if (mins <= 2 || isNaN(mins) === true) { 
+        if (mins <= 2 || isNaN(mins) === true ) { 
           negativeMessage = " You couldn't make the next train even if you" + 
             " ran, so take your time!";
-          mins = k[i].getElementsByTagName("minutes")[1].childNodes[0].nodeValue;
-          mins = parseInt(mins); 
+          mins = departTimes[1];
           document.getElementById("runTime").innerHTML= drankList(coffeeDranks, 
             mins) + negativeMessage + " The next viable train is leaving in " + 
             mins + " minutes.";
         }
         
-        else
+        else {
           document.getElementById("runTime").innerHTML= drankList(coffeeDranks, 
             mins) + ' The next train is leaving in ' + mins + ' minutes.';
-        } 
-      }
+        }
+      } 
     }
     
   return mins;
