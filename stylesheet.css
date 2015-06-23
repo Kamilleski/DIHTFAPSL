@@ -1,4 +1,4 @@
-* {
+body {
   font-family: arial;
   background-color: #FFD18A;
   color: #00494B;
@@ -6,6 +6,7 @@
 
 h1 {
  font-size: 40px;
+ color: #00494B;
 }
 
 h2 {
@@ -39,6 +40,9 @@ fieldset {
 
 label {
   background-color: #FFDCA5;
+  color: #00494B;
+}
+a {
   color: #00494B;
 }
 
