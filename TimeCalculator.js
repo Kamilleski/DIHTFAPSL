@@ -28,7 +28,7 @@ function drankList(arr, mins) {
       arr.pop();
     }
     
-    return "Sadly you don't have time for a pumpkin spice latte today, but " + 
+    return 'Sadly you don\'t have time for a pumpkin spice latte today, but ' + 
       drankString();
   }
 }
@@ -51,18 +51,18 @@ xhr.onreadystatechange = function() {
   xmlDoc=xhr.responseXML;
   if (xhr.readyState==4 && xhr.status==200){
     //creates array of etd objects
-    var etd = xmlDoc.getElementsByTagName("etd");   
+    var etd = xmlDoc.getElementsByTagName('etd');   
     //looping to use only the train lines that lead to Richmond
     for (var i = 0; i <etd.length; i++) {   
-      var abbr = (etd[i].getElementsByTagName("abbreviation")[0].childNodes[0].
+      var abbr = (etd[i].getElementsByTagName('abbreviation')[0].childNodes[0].
         nodeValue);
-      if (abbr === "PITT") {
-        mins = etd[i].getElementsByTagName("minutes")[0].childNodes[0].nodeValue;
+      if (abbr === 'PITT') {
+        mins = etd[i].getElementsByTagName('minutes')[0].childNodes[0].nodeValue;
         mins = parseInt(mins);
         departTimes.push(mins);
       }
-      else if (abbr === "RICH") {
-        mins = etd[i].getElementsByTagName("minutes")[0].childNodes[0].nodeValue;
+      else if (abbr === 'RICH') {
+        mins = etd[i].getElementsByTagName('minutes')[0].childNodes[0].nodeValue;
         mins = parseInt(mins);
         departTimes.push(mins);
       }
@@ -74,12 +74,12 @@ xhr.onreadystatechange = function() {
          * trains, move to next viable estimated time of departure
          */
         if (mins <= 2 || isNaN(mins) === true ) { 
-          negativeMessage = " You couldn't make the next train even if you" + 
-            " ran, so take your time!";
+          negativeMessage = ' You couldn\'t make the next train even if you' + 
+            ' ran, so take your time!';
           mins = departTimes[1];
-          document.getElementById("runTime").innerHTML= drankList(coffeeDranks, 
-            mins) + negativeMessage + " The next viable train is leaving in " + 
-            mins + " minutes.";
+          document.getElementById('runTime').innerHTML= drankList(coffeeDranks, 
+            mins) + negativeMessage + ' The next viable train is leaving in ' + 
+            mins + ' minutes.';
         }
         
         else {

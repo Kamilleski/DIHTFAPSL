@@ -33,7 +33,7 @@ else if (dayOfWeek >= 1 && dayOfWeek <= 3) {
   'Your hair looks great today, by the way!';
 }
 else if (dayOfWeek === 4) {
-  TGIFMessage = "Tomorrow is Friday! You're almost there...";
+  TGIFMessage = 'Tomorrow is Friday! You\'re almost there...';
 }
 
 else {
