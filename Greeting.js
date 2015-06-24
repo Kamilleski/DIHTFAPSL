@@ -42,7 +42,7 @@ else {
 
 //writing output to html page
 function totalGreeting(salutation, body) {
-  document.write(salutation + "  " + body);
+  document.write(salutation + '  ' + body);
 }
 
 totalGreeting(heyHoney(), TGIFMessage);
