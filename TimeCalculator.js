@@ -7,8 +7,36 @@
 
 
 //list of drinks in order of how long they take to prepare, +1 minute for each.
-var coffeeDranks = ['a coffee (hot or iced)', 'a cafe au lait', 
-  'a cafe latte', 'a pumpkin spice latte'];
+//TODO may be unnecessary, wait for BART to start running to find out
+//var coffeeDranks = ['a coffee (hot or iced)', 'a cafe au lait', 
+ // 'a cafe latte', 'a pumpkin spice latte'];
+  
+//object constructor for each drink's nutrients
+function DrinkNutrients(calories, fat, sugar, protein){
+  this.calories = calories;
+  this.fat = fat;
+  this.sugar = sugar;
+  this.protein = protein;
+}
+
+//putting drink nutrient objects into the drinks object (all large/whole milk)
+var drinks = {};
+drinks['a coffee (hot or iced)'] = new DrinkNutrients(10, 0, 0, 0);
+drinks['a cafe au lait'] = new DrinkNutrients(85, 4, 6, 4);
+drinks['a caffe latte'] = new DrinkNutrients(280, 14, 21, 14);
+drinks['a pumpkin spice latte'] = new DrinkNutrients(375, 13, 51, 13);
+
+
+//getting drink key names from object and pushing them into array for later use
+for (var key in drinks) {
+  var coffeeDranks = [];
+  if (drinks.hasOwnProperty(key)) {
+    var drinkKeyNames = Object.keys(drinks);
+    for(var i in drinkKeyNames) {
+      coffeeDranks.push(drinkKeyNames[i]);
+    }
+  }
+}
 
 /**creating a string with the list of what drinks you could get based on the 
  * times they take to create which I know from experience

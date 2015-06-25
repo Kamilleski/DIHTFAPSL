@@ -16,8 +16,8 @@ function calCalculator(){
     //declare values for following "Harris-Benedict" equation
     var recCalories;
     var percentage;
-    var calsInPSL = 435; /*there are 435 calories in a large whole milk 
-    Peet's Pumpkin Spice Latte*/
+    var calsInPSL = 493; /*there are 493 calories in a large whole milk 
+    Peet's Pumpkin Spice Latte with whip (drink: 375, whip: 118)*/
       
       if (sex === 'F' || sex === 'f') {
         recCalories = Math.floor(1.375 * ((447.593 + (9.247 * weight) + 
