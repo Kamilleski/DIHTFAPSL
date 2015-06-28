@@ -4,15 +4,9 @@
  * time to get, if any.  First I define all of the possible sassy string outputs,
  * then I get into the meat of parsing the API data.
  */
-
-
-//list of drinks in order of how long they take to prepare, +1 minute for each.
-//TODO may be unnecessary, wait for BART to start running to find out
-//var coffeeDranks = ['a coffee (hot or iced)', 'a cafe au lait', 
- // 'a cafe latte', 'a pumpkin spice latte'];
   
 //object constructor for each drink's nutrients
-function DrinkNutrients(calories, fat, sugar, protein){
+function DrinkNutrients(calories, fat, sugar, protein) {
   this.calories = calories;
   this.fat = fat;
   this.sugar = sugar;
