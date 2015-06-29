@@ -10,16 +10,16 @@
   
 //object constructor for each drink's nutrients
 function DrinkNutrients(calories, fat, sugar, protein) {
-  this.calories = 'calories';
-  this.fat = 'fat';
-  this.sugar = 'sugar';
-  this.protein = 'protein';
+  this.calories = calories;
+  this.fat = fat;
+  this.sugar = sugar;
+  this.protein = protein;
 }
 
 /**putting drink nutrient objects into the drinks object (all size large/ with 
  *whole milk) (obv),
  */
-var drinks = {};
+var drinks = [];
 drinks['a coffee (hot or iced)'] = new DrinkNutrients(10, 0, 0, 0);
 drinks['a cafe au lait'] = new DrinkNutrients(85, 4, 6, 4);
 drinks['a caffe latte'] = new DrinkNutrients(280, 14, 21, 14);
